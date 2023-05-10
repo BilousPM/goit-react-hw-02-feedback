@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import css from './FeedbackWidget/Statistics.module.css'
 import FeedbackOptions from "./FeedbackWidget/FeedbackOptions";
 import Statistics from './FeedbackWidget/Statistics';
 import Section from "./FeedbackWidget/Section";
@@ -13,7 +12,6 @@ class App extends Component {
     bad: 0,
   };
 
-
    onLeaveFeedback = (item) => {
     this.setState(prevState => ({[item]: prevState[item] + 1}))
   };
@@ -22,7 +20,6 @@ class App extends Component {
     const { good, neutral, bad } = this.state
     return good + neutral + bad
   };
-
 
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
@@ -34,9 +31,6 @@ class App extends Component {
     positiveFeedback = (good / total) * 100;
     return Math.round(positiveFeedback);
   };
-
-
-
 
   render() {
     const { good, neutral, bad } = this.state;
